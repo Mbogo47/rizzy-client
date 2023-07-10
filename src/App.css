@@ -32,7 +32,7 @@ html {
     background-color: var(--lighter-white);
 }
 
-#section {
+section {
     padding: 2rem 9%;
 }
 

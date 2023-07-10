@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
-import login from '../../assets/login.svg';
+import loginpic from '../../assets/login.svg';
 import './login.css';
 
 const Login = () => {
@@ -63,7 +63,7 @@ const Login = () => {
       <div className="login-form" >
 
         <div className="image">
-          <img src={login} alt="login pisture" />
+          <img src={loginpic} alt="login pisture" />
         </div>
 
         <form onSubmit={handleSubmit(onsubmit)}>
