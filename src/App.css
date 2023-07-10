@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500&family=Nunito:wght@200;300;400;500&display=swap');
+
+
+* {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: all .2s ease-out;
+    text-decoration: none;
+
+}
+
+:root {
+    --dark-purple: #6620C1;
+    --light-purple: #8A33FD;
+    --white: #FFFFFF;
+    --light-grey: #807D7E;
+    --dark-grey: #3C4242;
+    --light-white: #EAEAEA;
+    --lighter-grey: #BEBCBD;
+
+}
+
+html {
+    font-size: 75.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+    background-color: var(--lighter-white);
+}
+
+#section {
+    padding: 2rem 9%;
+}
+
+.btn-primary {
+    background-color: var(--light-purple);
+    color: var(--white);
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--dark-purple);
+    color: var(--white);
+}
+
+.btn-primary:disabled {
+    background-color: var(--light-grey);
+    color: var(--light-white);
+}
+
+.btn-secondary {
+    color: var(--dark-purple);
+    border: var(--dark-grey);
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    color: var(--light-purple);
+    border: var(--dark-grey);
+}
