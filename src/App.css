@@ -68,3 +68,14 @@ section {
     color: var(--light-purple);
     border: var(--dark-grey);
 }
+
+.heading {
+    font-size: 3.5rem;
+    color:var(--dark-grey);
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.heading span {
+    color: var(--dark-purple);
+}

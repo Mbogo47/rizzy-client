@@ -75,9 +75,7 @@ const Home = () => {
                         </div>
 
                         <div
-                            className="swiper-slide slide three"
-
-                        >
+                            className="swiper-slide slide three">
                             <div className="content">
                                 <span>upto 50% off</span>
                                 <h3>kid's Fashion</h3>

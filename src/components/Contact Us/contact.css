@@ -1,0 +1,105 @@
+.contact .icons-container {
+    /* display: -ms-grid; */
+    /* -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit]; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.contact .icons-container .icons {
+    padding: 2rem;
+    border-radius: .5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact .icons-container .icons .icon {
+    height: 6rem;
+    width: 6rem;
+    color: var(--dark-grey);
+}
+
+.contact .icons-container .icons h3 {
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    color: var(--dark-grey);
+}
+
+.contact .icons-container .icons p {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--light-grey);
+}
+
+.contact .row {
+    /* display: -webkit-box; */
+    /* display: -ms-flexbox; */
+    /* -ms-flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact .row form {
+    /* -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem; */
+    /* -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); */
+    flex: 1 1 42rem;
+    padding: 2rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+}
+
+.contact .row form h3 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    color: var(--dark-grey);
+}
+
+.contact .row form .inputBox {
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    /* -ms-flex-wrap: wrap; */
+    /* -webkit-box-pack: justify;
+    -ms-flex-pack: justify; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact .row form .inputBox input {
+    width: 49%;
+}
+
+.contact .row form .inputBox input,
+.contact .row form textarea {
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
+    padding: 1rem 1.2rem;
+    font-size: 1.6rem;
+    color: var(--dark-grey);
+    text-transform: none;
+    margin: .7rem 0;
+}
+
+.contact .row form textarea {
+    height: 15rem;
+    resize: none;
+    width: 100%;
+}
+
+.contact .row .image {
+    /* -webkit-box-flex: 1;
+    -ms-flex: 1 1 42rem; */
+    /* -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); */
+    flex: 1 1 42rem;
+    width: 100%;
+    padding: 2rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    border-radius: .5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
