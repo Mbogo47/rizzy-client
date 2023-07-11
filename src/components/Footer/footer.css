@@ -1,0 +1,35 @@
+.footer .share {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer .share .fa {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--dark-purple);
+    background: var(--dark-purple);
+    color: #fff;
+    margin: .3rem;
+}
+
+.footer .share .fa:hover {
+    background: #130f40;
+    transform: rotate(360deg);
+    border: .2rem solid #130f40;
+}
+
+.footer .credit {
+    margin-top: 2.5rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #130f40;
+    font-size: 2rem;
+}
+
+.footer .credit span {
+    color: var(--dark-purple);
+}

@@ -1,0 +1,44 @@
+.review {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.review .slide {
+    border-radius: .5rem;
+    background: var(--white);
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.review .slide p {
+    font-size: 1.4rem;
+    color: var(--light-grey);
+    line-height: 2;
+}
+
+.review .slide .user {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.review .slide .user img {
+    height: 7rem;
+    width: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.review .slide .user h3 {
+    font-size: 2.2rem;
+    color: var(--dark-grey);
+}
+
+.review .slide .user span {
+    font-size: 1.5rem;
+    color: var(--dark-purple);
+}

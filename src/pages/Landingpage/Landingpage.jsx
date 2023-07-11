@@ -1,5 +1,6 @@
 import Banner from '../../components/Banner/Banner';
 import Contact from '../../components/Contact Us/Contact';
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Home from '../../components/Home/Home';
 import Reviews from '../../components/Reviews/Reviews';
@@ -14,6 +15,7 @@ const Landingpage = () => {
       <Banner />
       <Reviews />
       <Contact />
+      <Footer />
     </>
   );
 };

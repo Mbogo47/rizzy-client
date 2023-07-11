@@ -1,6 +1,13 @@
 import { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
 import './reviews.css';
+import ReviewsCont from './ReviewsCont';
+import img1 from '../../assets/pic-1.png';
+import img2 from '../../assets/pic-2.png';
+import img3 from '../../assets/pic-3.png';
+import img4 from '../../assets/pic-4.png';
+import img5 from '../../assets/pic-5.png';
+import img6 from '../../assets/pic-6.png';
 
 const Reviews = () => {
     const swiperRef = useRef(null);
@@ -56,32 +63,23 @@ const Reviews = () => {
 
     return (
         <section className="review" id="review">
+            <h1 className="heading"> client's <span>review</span> </h1>
             <div className="swiper review-slide">
-                <Swiper
-                    slidesPerView={1}
-                    navigation
-                    autoplay={{ delay: 5000, disableOnInteraction: false }}
-                    loop
-                >
-                    <SwiperSlide>
-                        <div className="slide">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus
-                                quibusdam ea nam commodi.
-                            </p>
-                            <div className="user">
-                                <img src="image/pic-1.png" alt="" />
-                                <div className="info">
-                                    <h3>john deo</h3>
-                                    <span>happy client</span>
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
+                <div className="swiper-wrapper">
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img1} name="John Doe" text="happy client"  />
 
-                    {/* Rest of the slides */}
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img2} name="John Doe" text="happy client"  />
 
-                </Swiper>
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img3} name="John Doe" text="happy client"  />
+
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img4} name="John Doe" text="happy client"  />
+
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img5} name="John Doe" text="happy client"  />
+
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img6} name="John Doe" text="happy client"  />
+                </div>
+
+
                 <div className="swiper-button-next" onClick={handleNextSlide}></div>
                 <div className="swiper-button-prev" onClick={handlePrevSlide}></div>
             </div>

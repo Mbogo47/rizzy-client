@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Swiper from 'swiper';
 import './home.css';
+import HomeCont from './HomeCont';
 
 const Home = () => {
     const swiperRef = useRef(null);
@@ -47,47 +48,26 @@ const Home = () => {
     };
     return (
         <>
-
-
             <section className="home" id="home">
                 <div className="swiper home-slider">
                     <div className="swiper-wrapper">
 
-                        <div className="swiper-slide slide one"
-                        >
-                            <div className="content">
-                                <span>upto 50% off</span>
-                                <h3>women's Fashion</h3>
-                                <a href="#" className="btn">
-                                    shop now
-                                </a>
-                            </div>
+                        <div className="swiper-slide slide one">
+                            <HomeCont text="upto 50% off" heading="women's Fashion" button="shop now" />
                         </div>
 
                         <div className="swiper-slide slide two" >
-                            <div className="content">
-                                <span>upto 50% off</span>
-                                <h3>men's Fashion</h3>
-                                <a href="#" className="btn">
-                                    shop now
-                                </a>
-                            </div>
+                            <HomeCont text="upto 50% off" heading="men's fashion" button="shop now" />
                         </div>
 
-                        <div
-                            className="swiper-slide slide three">
-                            <div className="content">
-                                <span>upto 50% off</span>
-                                <h3>kid's Fashion</h3>
-                                <a href="#" className="btn">
-                                    shop now
-                                </a>
-                            </div>
+                        <div className="swiper-slide slide three">
+                            <HomeCont text="upto 50% off" heading="kid's fashion" button="shop now" />
                         </div>
                     </div>
 
                     <div className="swiper-button-next" onClick={handleNextSlide}></div>
-                    <div className="swiper-button-prev" onClick={handlePrevSlide}></div>
+                    <div className="swiper-button-prev" onClick={handlePrevSlide}>
+                    </div>
                 </div>
             </section>
         </>
