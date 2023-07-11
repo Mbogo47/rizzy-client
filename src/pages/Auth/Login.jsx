@@ -15,7 +15,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const schema = yup.object().shape({
-    username: yup.string().required("Username is required"),
+    email: yup.string().required("Email is required"),
     password: yup.string()
       .required('Password is required')
       .matches(/[a-z]/, 'Must contain at least one lowercase letter')
@@ -86,9 +86,9 @@ const Login = () => {
 
         <form onSubmit={handleSubmit(onsubmit)}>
 
-          <label >Username</label>
-          <input type="text" placeholder="Enter your username" {...register("username")} />
-          {errors.username && notify(errors.username.message, 'username-error')}
+          <label >Email</label>
+          <input type="text" placeholder="Enter your email" {...register("email")} />
+          {errors.email && notify(errors.email.message, 'email-error')}
 
 
           <label >Password</label>

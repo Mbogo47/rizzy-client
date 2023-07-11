@@ -1,14 +1,14 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { CiSearch } from 'react-icons/ci';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 import signinpic from '../../assets/signup.svg';
-import './login.css';
 import { registerUser } from "../../redux/apiCall";
-import { useDispatch, useSelector } from 'react-redux';
+import './login.css';
 
 const Signup = () => {
 
@@ -33,8 +33,6 @@ const Signup = () => {
       .oneOf([yup.ref("password"), null], "Passwords must match"),
   });
 
-  
-
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
@@ -44,11 +42,14 @@ const Signup = () => {
     toast.error(errorMessage, { toastId });
   };
 
+
   const onsubmit = (data) => {
     console.log(data);
     toast.success("Signup Successful");
     navigate('/login');
-  }
+    const { username, email, password } = data;
+    registerUser(dispatch, { username, email, password });
+  };
 
   return (
     <div className="login" >
@@ -99,9 +100,9 @@ const Signup = () => {
           <input type="password" placeholder="Enter your password" {...register("password")} />
           {errors.password && notify(errors.password.message, 'password-error')}
 
-          <label>Confirm Password</label>
+          {/* <label>Confirm Password</label>
           <input type="password" placeholder='Confirm your password' />
-          {errors.confirmPassword && notify(errors.confirmPassword.message, 'confirmPassword-error')}
+          {errors.confirmPassword && notify(errors.confirmPassword.message, 'confirmPassword-error')} */}
 
           <button className="btn-primary">
             <span>Sign Up</span>

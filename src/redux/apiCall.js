@@ -9,18 +9,18 @@ export const registerUser = async (dispatch, user) => {
         console.log(user);
         const response = await axios.post(`${apiDomain}/auth/register`, user);
         const data = response.data;
-        let res = {
-            userName: data.userName,
-            email: data.email,
-            password: data.password
-        }
+        // let res = {
+        //     userName: data.userName,
+        //     email: data.email,
+        //     password: data.password
+        // }
         if (data.status === 'success') {
             // alert('Account created successfully. Continue to login')
             toast.info('Account created successfully. Continue to login', 'signup', {
                 position: 'top-center',
             });
         }
-        console.log(res);
+        console.log(data);
     } catch (err) {
         // alert(err.response.data.error)
         toast.warning(err.response.data.error, 'signup-error', {
