@@ -7,15 +7,28 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 import loginpic from '../../assets/login.svg';
 import './login.css';
+import { loginUser } from '../../redux/apiCall.js';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const schema = yup.object().shape({
     username: yup.string().required("Username is required"),
-    password: yup.string().required("Password is required"),
+    password: yup.string()
+      .required('Password is required')
+      .matches(/[a-z]/, 'Must contain at least one lowercase letter')
+      .matches(/[A-Z]/, 'Must contain at least one uppercase letter')
+      .matches(/[0-9]/, 'Must contain at least one number')
+      .matches(/[^a-zA-Z0-9]/, 'Must contain at least one special character')
+      .test(
+        'password',
+        'Password must be at least 8 characters long',
+        (value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(value)
+      ),
   });
 
-  const navigate = useNavigate();
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
@@ -25,11 +38,16 @@ const Login = () => {
     toast.error(errorMessage, { toastId });
   };
 
-  const onsubmit = (data) => {
+  const onsubmit = async (data) => {
     console.log(data);
+    const success = await loginUser(dispatch, data);
+    console.log(success);
+    if (success) {
     toast.success("Login Successful");
     navigate('/');
   }
+} 
+  
 
   return (
     <div className="login" >

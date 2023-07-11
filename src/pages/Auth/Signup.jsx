@@ -7,17 +7,34 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 import signinpic from '../../assets/signup.svg';
 import './login.css';
+import { registerUser } from "../../redux/apiCall";
+import { useDispatch, useSelector } from 'react-redux';
 
 const Signup = () => {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const schema = yup.object().shape({
     username: yup.string().required("Username is required"),
     email: yup.string().required("Email is required"),
-    password: yup.string().required("Password is required"),
-    confirmPassword: yup.string().required("Confirm Password is required"),
+    password: yup.string()
+      .required('Password is required')
+      .matches(/[a-z]/, 'Must contain at least one lowercase letter')
+      .matches(/[A-Z]/, 'Must contain at least one uppercase letter')
+      .matches(/[0-9]/, 'Must contain at least one number')
+      .matches(/[^a-zA-Z0-9]/, 'Must contain at least one special character')
+      .test(
+        'password',
+        'Password must be at least 8 characters long',
+        (value) => /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(value)
+      ),
+    confirmPassword: yup.string()
+      .oneOf([yup.ref("password"), null], "Passwords must match"),
   });
 
-  const navigate = useNavigate();
+  
+
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
