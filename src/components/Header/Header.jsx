@@ -1,6 +1,7 @@
 import { CiSearch } from 'react-icons/ci';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({}) => {
     return (
         <>
             <nav>
@@ -18,11 +19,17 @@ const Header = () => {
                 <div className="auth">
 
                     <button className="btn-primary">
+                        <Link to='/login'>
                         <span>Sign In</span>
+                        </Link>
+                            
                     </button>
 
                     <button className="btn-secondary">
+                        <Link to='/signup'>
+
                         <span>Sign Up</span>
+                        </Link>
                     </button>
 
                 </div>

@@ -1,10 +1,11 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import User from './components/UserProfile/User';
 import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Signup';
 import Landingpage from './pages/Landingpage/Landingpage';
-import User from './components/UserProfile/User';
+import Products from './pages/Products/Combo/Products';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/user" element={<User />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
         <ToastContainer />
       </Router>

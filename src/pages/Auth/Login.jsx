@@ -43,11 +43,11 @@ const Login = () => {
     const success = await loginUser(dispatch, data);
     console.log(success);
     if (success) {
-    toast.success("Login Successful");
-    navigate('/');
+      toast.success("Login Successful");
+      navigate('/products');
+    }
   }
-} 
-  
+
 
   return (
     <div className="login" >
@@ -104,7 +104,7 @@ const Login = () => {
           </span>
 
         </form>
-        
+
       </div>
 
     </div>
