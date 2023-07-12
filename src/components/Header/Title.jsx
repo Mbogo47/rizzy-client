@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
 import './title.css'
 import { CiSearch } from 'react-icons/ci'
+import { FaUserCircle, FaShoppingCart} from 'react-icons/fa'
+
 const Title = () => {
 
   return (
@@ -13,22 +16,32 @@ const Title = () => {
 
               <ul className='nav-list'>
                   <li className='nav-item'>
-                      <button className='btn'>Combos</button>
+                      <Link to="/combos" className="btn">Combos</Link>
                   </li>
                   <li className='nav-item'>
-                      <button className='btn'>Men</button>
+                      <Link to="/men" className="btn">Men</Link>
                   </li>
                   <li className='nav-item'>
-                      <button className='btn'>Women</button>
+                      <Link to="/women" className="btn">Women</Link>
                   </li>
                   <li className='nav-item'>
-                      <button className='btn'>Children</button>
+                      <Link to="/child" className="btn">Children</Link>
                   </li>
               </ul>
+
 
               <div className="search">
                   <input type="search" name="search" placeholder="Search" />
                   <CiSearch className="search-icon" />
+              </div>
+
+              <div className="userprofile">
+                  <FaUserCircle style={{'marginRight':'20px'}}/>
+                  <FaShoppingCart />
+              </div>
+
+              <div className="cart">
+                  
               </div>
 
           </nav>

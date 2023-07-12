@@ -6,6 +6,9 @@ import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Signup';
 import Landingpage from './pages/Landingpage/Landingpage';
 import Products from './pages/Products/Combo/Products';
+import Men from './pages/Products/Men/Men';
+import Women from './pages/Products/Women/Women';
+import Children from './pages/Products/Children/Children';
 
 function App() {
   return (
@@ -16,7 +19,10 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/user" element={<User />} />
-          <Route path="/products" element={<Products />} />
+          <Route path="/combos" element={<Products />} />
+          <Route path="/men" element={<Men />} />
+          <Route path="/women" element={<Women />} />
+          <Route path="/child" element={<Children />} />
         </Routes>
         <ToastContainer />
       </Router>
