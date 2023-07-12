@@ -1,34 +1,36 @@
-import { loginStart, loginSuccess, loginFailure, logOut } from './userSlice';
 import axios from 'axios';
-import { apiDomain } from '../utils/utilsDomain';
 import { toast } from 'react-toastify';
+import { apiDomain } from '../utils/utilsDomain';
+import { logOut, loginFailure, loginStart, loginSuccess } from './userSlice';
 
-//register a user
+
 export const registerUser = async (dispatch, user) => {
     try {
         console.log(user);
         const response = await axios.post(`${apiDomain}/auth/register`, user);
         const data = response.data;
-        // let res = {
-        //     userName: data.userName,
-        //     email: data.email,
-        //     password: data.password
-        // }
-        if (data.status === 'success') {
-            // alert('Account created successfully. Continue to login')
-            toast.info('Account created successfully. Continue to login', 'signup', {
-                position: 'top-center',
-            });
+
+        if (response.status === 201 && data.status === 'success') {
+            // No toast success message here
+        } else {
+            throw new Error(data.message || 'Failed to register user');
         }
+
         console.log(data);
     } catch (err) {
-        // alert(err.response.data.error)
-        toast.warning(err.response.data.error, 'signup-error', {
-            position: 'top-center',
-        });
+        const errorMessage = err.response?.data?.message || 'An error occurred while registering user';
+
+        if (err.response?.status === 400 && errorMessage === 'Email already registered') {
+            toast.error(errorMessage, 'signup-error');
+        } else {
+            toast.warning(errorMessage, 'signup-error');
+        } 
         console.log(err);
     }
 };
+
+
+
 
 //login user
 export const loginUser = async (dispatch, user) => {
@@ -39,7 +41,7 @@ export const loginUser = async (dispatch, user) => {
     try {
         const { data } = await axios.post(`${apiDomain}/auth/login`, user);
         dispatch(loginSuccess(data));
-        toast.info('Welcome back','login', {
+        toast.info('Welcome back', 'login', {
             position: 'top-center'
         })
         // alert('logged in succesfully');
@@ -47,9 +49,10 @@ export const loginUser = async (dispatch, user) => {
         console.log(data);
 
     } catch (err) {
-        console.log(err)
-        console.log(err.response)
-        toast.warning(err.response.data.error,'login-error', {
+        // console.log(err)
+        console.log(err.response.data.message);
+
+        toast.error(err.response.data.message, 'login-error', {
             position: 'top-center'
         })
 
@@ -64,3 +67,4 @@ export const logOutuser = async (dispatch) => {
     console.log(dispatch);
     dispatch(logOut())
 }
+

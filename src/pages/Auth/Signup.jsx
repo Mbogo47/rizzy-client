@@ -16,7 +16,7 @@ const Signup = () => {
   const dispatch = useDispatch();
 
   const schema = yup.object().shape({
-    username: yup.string().required("Username is required"),
+    userName: yup.string().required("Username is required"),
     email: yup.string().required("Email is required"),
     password: yup.string()
       .required('Password is required')
@@ -43,13 +43,22 @@ const Signup = () => {
   };
 
 
-  const onsubmit = (data) => {
+
+  const onsubmit = async (data) => {
     console.log(data);
-    toast.success("Signup Successful");
     navigate('/login');
-    const { username, email, password } = data;
-    registerUser(dispatch, { username, email, password });
+    const { userName, email, password } = data;
+
+    try {
+      await registerUser(dispatch, { userName, email, password } );
+      console.log({ userName, email, password })
+      // toast.success('User registered successfully', 'signup-success')
+    } catch (err) {
+      const errorMessage = err.response?.data?.message || 'An error occurred while registering user';
+      console.log(err);
+    }
   };
+
 
   return (
     <div className="login" >
@@ -89,8 +98,9 @@ const Signup = () => {
         <form onSubmit={handleSubmit(onsubmit)}>
 
           <label >Username</label>
-          <input type="text" placeholder="Enter your username" {...register("username")} />
-          {errors.username && notify(errors.username.message, 'username-error')}
+          <input type="text" placeholder="Enter your username" {...register("userName")} />
+
+          {errors.userName && notify(errors.userName.message, 'userName-error')}
 
           <label>email</label>
           <input type="email" placeholder='Enter your email' {...register("email")} />
@@ -121,3 +131,6 @@ const Signup = () => {
 }
 
 export default Signup
+
+
+
