@@ -11,6 +11,7 @@
 }
 
 .product--item {
+    z-index: -1;
     flex-basis: 30%;
     background-color: #fff;
     border-radius: 10px;
@@ -18,7 +19,10 @@
     transition: all 0.3s ease-in-out;
     margin: 20px;
     padding: 10px;
+    position: relative;
 }
+
+
 
 .product--item img {
     border-radius: 10px;

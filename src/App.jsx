@@ -18,7 +18,12 @@ function App() {
           <Route path="/" element={<Landingpage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/user" element={<User />} />
+          <Route path="/user" element={<User />} >
+            {/* <Route path="orders" element={<Orders />} /> */}
+            {/* <Route path="wish" element={Wishlist />} />  */}
+            {/* <Route path="info" element={Info />} />  */}
+            {/* <Route path="logout" element={Logout />} />  */}
+            </Route>
           <Route path="/combos" element={<Products />} />
           <Route path="/men" element={<Men />} />
           <Route path="/women" element={<Women />} />

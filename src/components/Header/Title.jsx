@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
-import { FaShoppingCart, FaUserCircle, FaHeart } from 'react-icons/fa';
+import { FaHeart, FaShoppingCart, FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './title.css';
 
 const Title = () => {
-    const [userOpen, setUserOpen] = useState(false);
+
 
     return (
         <>
@@ -36,7 +35,7 @@ const Title = () => {
                 </div>
 
                 <div className="userprofile">
-                    <Link to = '/user' className='user-link'>
+                    <Link to='/user' className='user-link'>
                         <FaUserCircle className='user-icons' />
                     </Link>
                     <FaShoppingCart className='user-icons' />
