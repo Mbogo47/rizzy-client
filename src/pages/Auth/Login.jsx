@@ -1,14 +1,14 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { CiSearch } from 'react-icons/ci';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 import loginpic from '../../assets/login.svg';
-import './login.css';
 import { loginUser } from '../../redux/apiCall.js';
-import { useDispatch } from 'react-redux';
+import './login.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -41,6 +41,9 @@ const Login = () => {
   const onsubmit = async (data) => {
     console.log(data);
     const success = await loginUser(dispatch, data);
+    if (data.token) {
+      localStorage.setItem("user", JSON.stringify(data));
+    }
     console.log(success);
     if (success) {
       toast.success("Login Successful");

@@ -14,3 +14,9 @@
   margin-right: 20px;
   /* margin-top: 10px; */
 }
+
+.user-icons{
+  font-size: 2.5rem;
+  color: var(--dark-purple);
+  margin-right: 20px;
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import Title from '../../../components/Header/Title'
 import product1 from '../../../assets/product_img1.jpg'
 import './products.css'
+
 // Combos
 const Products = () => {
     return (

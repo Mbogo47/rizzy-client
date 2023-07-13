@@ -66,17 +66,17 @@ const Reviews = () => {
             <h1 className="heading"> client's <span>review</span> </h1>
             <div className="swiper review-slide">
                 <div className="swiper-wrapper">
-                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img1} name="John Doe" text="happy client"  />
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img1} name="Alex Wennberg" text="happy client"  />
 
-                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img2} name="John Doe" text="happy client"  />
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img2} name="Emily Blunt" text="happy client"  />
 
-                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img3} name="John Doe" text="happy client"  />
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img3} name="Zayne Malik" text="happy client"  />
 
-                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img4} name="John Doe" text="happy client"  />
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img4} name="Scarlett Johanson" text="happy client"  />
 
-                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img5} name="John Doe" text="happy client"  />
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img5} name="John Krasinski" text="happy client"  />
 
-                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img6} name="John Doe" text="happy client"  />
+                    <ReviewsCont p="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur veniam deserunt praesentium natus quibusdam ea nam commodi" img={img6} name="Emilia Clarke" text="happy client"  />
                 </div>
 
 

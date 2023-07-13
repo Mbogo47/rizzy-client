@@ -21,7 +21,8 @@
     --dark-grey: #3C4242;
     --light-white: #EAEAEA;
     --lighter-grey: #BEBCBD;
-
+--border-radius: 8px;
+    --speed: 500ms;
 }
 
 html {
