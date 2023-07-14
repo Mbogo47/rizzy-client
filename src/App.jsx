@@ -9,6 +9,7 @@ import Products from './pages/Products/Combo/Products';
 import Men from './pages/Products/Men/Men';
 import Women from './pages/Products/Women/Women';
 import Children from './pages/Products/Children/Children';
+import Cart from './pages/Cart/Cart';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             {/* <Route path="info" element={Info />} />  */}
             {/* <Route path="logout" element={Logout />} />  */}
             </Route>
+            <Route path="/cart" element={<Cart />} />
           <Route path="/combos" element={<Products />} />
           <Route path="/men" element={<Men />} />
           <Route path="/women" element={<Women />} />
