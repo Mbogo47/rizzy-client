@@ -1,15 +1,16 @@
+import Icon from "../../pages/Products/Icons"
+const Products = ({product}) => {
+  return (
+    <>
+          <img src={product.imageSrc} alt="product" />
+          <div className="product--item--details">
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              <span>${product.price}</span>
+              <Icon id={product.id}/>
+          </div>
+              </>
+  )
+}
 
-// const Products = () => {
-//   return (
-//     <>
-//           <section className="products" id="products">
-//               <h1 className="heading">exclusive <span>products</span></h1>
-//               <div className="filter-buttons">
-//                     <div className="all"></div>
-//               </div>
-//           </section>
-//     </>
-//   )
-// }
-
-// export default Products
+export default Products
