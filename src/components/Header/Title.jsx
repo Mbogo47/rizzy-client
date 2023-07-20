@@ -29,7 +29,7 @@ const Title = () => {
                     <>
                         <ul className='nav-list'>
                             <FaTimes className='times' />
-                            <li className='nav-item'>
+                            {/* <li className='nav-item'>
                                 <Link to="/combos" onClick={toggleMenu}>Combos</Link>
                             </li>
                             <li className='nav-item'>
@@ -46,6 +46,11 @@ const Title = () => {
                             </li>
                             <li className='nav-item'>
                                 Wish
+                            </li> */}
+                            <li className='nav-item'>
+                                <Link to='/products/combos'>
+                                    Products
+                                </Link>
                             </li>
                             <li className='nav-item'>
                                 <Link to="/user" onClick={toggleMenu}>User</Link>
@@ -62,7 +67,7 @@ const Title = () => {
                     <span className="text">all the way</span>
                 </div>
                 <ul className='nav-list'>
-                    <li className='nav-item'>
+                    {/* <li className='nav-item'>
                         <Link to="/combos" className="btn" onClick={toggleMenu}>Combos</Link>
                     </li>
                     <li className='nav-item'>
@@ -73,7 +78,7 @@ const Title = () => {
                     </li>
                     <li className='nav-item'>
                         <Link to="/child" className="btn" onClick={toggleMenu}>Children</Link>
-                    </li>
+                    </li> */}
                 </ul>
                 <div className="search">
                     <input type="search" name="search" placeholder="Search" />
@@ -86,7 +91,9 @@ const Title = () => {
                     <Link to='/cart' className='user-link'>
                         <FaShoppingCart className='user-icons' />
                     </Link>
+                    <Link to='/wishlist' className='user-link'>
                     <FaHeart className='user-icons' />
+                    </Link>
                 </div>
             </nav>
         </header>

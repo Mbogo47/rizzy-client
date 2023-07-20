@@ -1,15 +1,18 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import Products from './components/Products/Products';
 import User from './components/UserProfile/User';
 import Login from './pages/Auth/Login';
 import Signup from './pages/Auth/Signup';
+import Cart from './pages/Cart/Cart';
 import Landingpage from './pages/Landingpage/Landingpage';
-import Products from './pages/Products/Combo/Products';
+import Children from './pages/Products/Children/Children';
+import Combos from './pages/Products/Combo/Combos';
 import Men from './pages/Products/Men/Men';
 import Women from './pages/Products/Women/Women';
-import Children from './pages/Products/Children/Children';
-import Cart from './pages/Cart/Cart';
+import ProductCont from './components/Products/ProductCont';
+import Wishlist from './pages/Wish/Wish';
 
 function App() {
   return (
@@ -24,12 +27,15 @@ function App() {
             {/* <Route path="wish" element={Wishlist />} />  */}
             {/* <Route path="info" element={Info />} />  */}
             {/* <Route path="logout" element={Logout />} />  */}
-            </Route>
-            <Route path="/cart" element={<Cart />} />
-          <Route path="/combos" element={<Products />} />
-          <Route path="/men" element={<Men />} />
-          <Route path="/women" element={<Women />} />
-          <Route path="/child" element={<Children />} />
+          </Route>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/products" element={<ProductCont/>}>
+            <Route path="combos" element={<Combos />} />
+            <Route path="men" element={<Men />} />
+            <Route path="women" element={<Women />} />
+            <Route path="child" element={<Children />} />
+          </Route>
+          <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
         <ToastContainer />
       </Router>

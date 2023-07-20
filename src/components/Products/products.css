@@ -1,0 +1,17 @@
+.pro-cont{
+    display: flex;
+        padding: 20px;
+}
+.products-content{
+
+    flex: 1;
+    /* margin-left: 20px; */
+}
+
+/* .sidebar{
+    
+} */
+
+.menu{
+    margin-bottom: 30px;
+}

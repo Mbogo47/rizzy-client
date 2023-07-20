@@ -33,7 +33,7 @@ const Women = () => {
 
     return (
         <>
-            <Title />
+            {/* <Title /> */}
             <section className="Women">
                 <div className="product--items">
                     {productsData.map((product) => (

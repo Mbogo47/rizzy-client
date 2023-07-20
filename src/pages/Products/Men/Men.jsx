@@ -27,13 +27,33 @@ const productsData = [
         price: 19.99,
         imageSrc: product1,
     },
-    // Add more products here...
+    {
+        id: 4,
+        name: 'Product 4',
+        description: 'Description for Product 4',
+        price: 19.99,
+        imageSrc: product1,
+    },
+    {
+        id: 5,
+        name: 'Product 5',
+        description: 'Description for Product 5',
+        price: 19.99,
+        imageSrc: product1,
+    },
+    {
+        id: 6,
+        name: 'Product 6',
+        description: 'Description for Product 6',
+        price: 19.99,
+        imageSrc: product1,
+    },
 ];
 
 const Men = () => {
     return (
         <>
-            <Title />
+            {/* <Title /> */}
             <section className="Men">
                 <div className="product--items">
                     {productsData.map((product) => (

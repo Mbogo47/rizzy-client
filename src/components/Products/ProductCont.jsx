@@ -1,14 +1,24 @@
-// const ProductCont = () => {
-//   return (
-//     <>
-//     <section className="products" id="products">
-//         <h1 className="heading">exclusive <span>products</span></h1>
-//         <div className="filter-buttons">
-            
-//         </div>
-//     </section>
-//     </>
-//   )
-// }
+import { Outlet } from "react-router-dom"
+import Products from "./Products"
+import './products.css'
+import Title from "../Header/Title"
+import Footer from "../Footer/Footer"
+const ProductCont = () => {
+    return (
+        <>
+        <Title/>
+            <div className="pro-cont">
 
-// export default ProductCont
+                <Products />
+                <div className="products-content">
+
+                    <Outlet />
+                </div>
+            </div>
+            <Footer />
+
+        </>
+    )
+}
+
+export default ProductCont

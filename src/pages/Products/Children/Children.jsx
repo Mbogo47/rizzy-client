@@ -26,7 +26,27 @@ const productsData = [
         price: 19.99,
         imageSrc: product1,
     },
-    // Add more products here...
+    {
+        id: 4,
+        name: 'Product 4',
+        description: 'Description for Product 4',
+        price: 19.99,
+        imageSrc: product1,
+    },
+    {
+        id: 5,
+        name: 'Product 5',
+        description: 'Description for Product 5',
+        price: 19.99,
+        imageSrc: product1,
+    },
+    {
+        id: 6,
+        name: 'Product 6',
+        description: 'Description for Product 6',
+        price: 19.99,
+        imageSrc: product1,
+    },
 ];
 
 // Combos
@@ -34,12 +54,18 @@ const Children = () => {
     
     return (
         <>
-            <Title />
+            {/* <Title /> */}
             <section className="Children">
                 <div className="product--items">
                     {productsData.map((product) => (
                         <div key={product.id} className="product--item">
-                            <Products product={product} />
+                            <img src={product.imageSrc} alt="product" />
+                            <div className="product--item--details">
+                                <h3>{product.name}</h3>
+                                <p>{product.description}</p>
+                                <span>${product.price}</span>
+                                <Icon id={product.id} />
+                            </div>
                         </div>
                     ))}
                 </div>

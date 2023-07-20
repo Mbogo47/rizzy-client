@@ -30,19 +30,19 @@ const User = () => {
             <Title />
             <Sidebar collapsed={collapsed} className="sidebar" transitionDuration={1000}>
                 <Menu>
-                    <MenuItem icon={<FaBars className="icons-side" />} onClick={() => { setCollapsed(!collapsed); }}>
+                    <MenuItem icon={<FaBars className="icons-side" />} onClick={() => { setCollapsed(!collapsed); }} className='menu'>
                         <p>Welcome to your account</p>
                     </MenuItem >
-                    <MenuItem icon={<FaShoppingBag className="icons-side" />}>
+                    <MenuItem icon={<FaShoppingBag className="icons-side" />} className='menu'>
                         <span className="span-side">My orders</span>
                     </MenuItem>
-                    <MenuItem icon={<FaHeart className="icons-side" />}>
+                    <MenuItem icon={<FaHeart className="icons-side" />} className='menu'>
                         <span className="span-side">Wishlist</span>
                     </MenuItem>
-                    <MenuItem icon={<FaUserCircle className="icons-side" />}>
+                    <MenuItem icon={<FaUserCircle className="icons-side" />} className='menu'>
                         <span className="span-side">Your Info</span>
                     </MenuItem>
-                    <MenuItem icon={<FiLogOut className="icons-side" />}>
+                    <MenuItem icon={<FiLogOut className="icons-side" />} className='menu'>
                         <span className="span-side">Logout</span>
                     </MenuItem>
                 </Menu>
