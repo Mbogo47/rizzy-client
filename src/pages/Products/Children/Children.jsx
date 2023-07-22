@@ -1,8 +1,8 @@
 import Title from '../../../components/Header/Title'
 import product1 from '../../../assets/product_img4.jpg'
-import '../Combo/products.css'
+import '../Combo/combos.css'
 import Icon from '../Icons';
-import Products from '../../../components/Products/Products';
+// import Products from '../../../components/Products/Products';
 // Sample product data
 const productsData = [
     {

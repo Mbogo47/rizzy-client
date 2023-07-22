@@ -1,7 +1,7 @@
 import React from 'react';
 import product1 from '../../../assets/product_img2.jpg';
 import Title from '../../../components/Header/Title';
-import '../Combo/products.css';
+import '../Combo/combos.css';
 import Icon from '../Icons';
 
 // Sample product data

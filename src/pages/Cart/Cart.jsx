@@ -7,8 +7,8 @@ const Cart = () => {
     return (
         <>
 
-        <div className="cart">
             <Title />
+        <div className="shopping-cart">
             <h1>Cart</h1>
         </div>
         <Footer />

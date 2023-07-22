@@ -13,6 +13,7 @@ import Men from './pages/Products/Men/Men';
 import Women from './pages/Products/Women/Women';
 import ProductCont from './components/Products/ProductCont';
 import Wishlist from './pages/Wish/Wish';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Landingpage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/*' element={<NotFound />}/>
           <Route path="/user" element={<User />} >
             {/* <Route path="orders" element={<Orders />} /> */}
             {/* <Route path="wish" element={Wishlist />} />  */}

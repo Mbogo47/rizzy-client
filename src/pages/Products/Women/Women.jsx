@@ -1,6 +1,6 @@
 import Title from '../../../components/Header/Title'
 import product1 from '../../../assets/product_img11.jpg'
-import '../Combo/products.css'
+import '../Combo/combos.css'
 import Icon from '../Icons';
 
 // Sample product data

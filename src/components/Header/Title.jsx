@@ -66,20 +66,6 @@ const Title = () => {
                     <span className="rizzy"> RIZZY</span>
                     <span className="text">all the way</span>
                 </div>
-                <ul className='nav-list'>
-                    {/* <li className='nav-item'>
-                        <Link to="/combos" className="btn" onClick={toggleMenu}>Combos</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/men" className="btn" onClick={toggleMenu}>Men</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/women" className="btn" onClick={toggleMenu}>Women</Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link to="/child" className="btn" onClick={toggleMenu}>Children</Link>
-                    </li> */}
-                </ul>
                 <div className="search">
                     <input type="search" name="search" placeholder="Search" />
                     <CiSearch className="search-icon" />
@@ -89,10 +75,15 @@ const Title = () => {
                         <FaUserCircle className='user-icons' />
                     </Link>
                     <Link to='/cart' className='user-link'>
-                        <FaShoppingCart className='user-icons' />
+                        <div className="cart-section">
+                            <FaShoppingCart className='user-icons' />
+                            <span className="bag-quantity">
+                                <span>3</span>
+                            </span>
+                        </div>
                     </Link>
                     <Link to='/wishlist' className='user-link'>
-                    <FaHeart className='user-icons' />
+                        <FaHeart className='user-icons' />
                     </Link>
                 </div>
             </nav>

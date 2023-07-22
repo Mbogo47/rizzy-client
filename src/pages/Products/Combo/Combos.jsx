@@ -3,7 +3,7 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import product1Image from '../../../assets/product_img1.jpg'; // Update the image path accordingly
 import Title from '../../../components/Header/Title';
 import '../icons.css';
-import './products.css';
+import './combos.css';
 
 // Sample product data
 const productsData = [
