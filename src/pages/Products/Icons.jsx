@@ -3,20 +3,24 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import './icons.css';
 
 const Icon = ({ id }) => {
-    const addToWishlist = () => {
+    const addToWishlist = (id) => {
         console.log('Added to wishlist');
         console.log(id);
-        // Perform any other logic you need to add the product to the wishlist
-        // For example, you can make an API request to your backend here.
     };
+
+    const addToCart = (id) => {
+        console.log('Added to cart');
+        console.log(id);
+    };
+
 
     return (
         <div className="pro-icons">
             {/* Add to cart section */}
             <div className="add-to-cart">
-                <button className="cart">
+                <button className="cart" button onClick={(e) => addToCart()} >
                 <FaShoppingCart className="cart-icon" title="Add to cart" />
-                    Add to cart
+                    
                 </button>
             </div>
 
@@ -24,7 +28,8 @@ const Icon = ({ id }) => {
             <div className="wishlist">
                 <button onClick={(e) => addToWishlist()} className="wish">
                     <FaHeart className="wish-icon" title="Add to wishlist" />
-                    Add to wishlist
+                    
+                    
                 </button>
             </div>
         </div>

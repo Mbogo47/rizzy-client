@@ -1,71 +1,40 @@
-import Title from '../../../components/Header/Title'
-import product1 from '../../../assets/product_img4.jpg'
-import '../Combo/combos.css'
-import Icon from '../Icons';
-// import Products from '../../../components/Products/Products';
-// Sample product data
-const productsData = [
-    {
-        id: 1,
-        name: 'Product 1',
-        description: 'Description for Product 1',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    {
-        id: 2,
-        name: 'Product 2',
-        description: 'Description for Product 2',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    {
-        id: 3,
-        name: 'Product 3',
-        description: 'Description for Product 3',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    {
-        id: 4,
-        name: 'Product 4',
-        description: 'Description for Product 4',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    {
-        id: 5,
-        name: 'Product 5',
-        description: 'Description for Product 5',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    {
-        id: 6,
-        name: 'Product 6',
-        description: 'Description for Product 6',
-        price: 19.99,
-        imageSrc: product1,
-    },
-];
+import { useEffect, useState } from 'react';
+import { apiDomain } from '../../../utils/utilsDomain';
+import getProductImage from '../../../components/images/images.js';
+import '../Combo/combos.css';
+import Icon from '../Icons'
 
 // Combos
 const Children = () => {
-    
+const [childrenProducts, setChildrenProducts] = useState([]);
+useEffect(() => {
+    fetch(`${apiDomain}/products/Children`)
+        .then((response) => response.json())
+        .then((data) => {
+            setChildrenProducts(data);
+        })
+        .catch((error) => {
+            console.error('Error fetching Children products:', error);
+        });
+}, []);
+
+
     return (
         <>
-            {/* <Title /> */}
+
             <section className="Children">
                 <div className="product--items">
-                    {productsData.map((product) => (
+                    {childrenProducts.map((product) => (
                         <div key={product.id} className="product--item">
-                            <img src={product.imageSrc} alt="product" />
-                            <div className="product--item--details">
-                                <h3>{product.name}</h3>
-                                <p>{product.description}</p>
-                                <span>${product.price}</span>
-                                <Icon id={product.id} />
+                            <div className="image">
+                                <img src={getProductImage(product.productName)} alt="product" />
                             </div>
+                            <div className="product--item--details">
+                                <h3>{product.productName}</h3>
+                                <p>{product.productDescription}</p>
+                                <span>${product.productPrice}</span>
+                            </div>
+                            <Icon />
                         </div>
                     ))}
                 </div>

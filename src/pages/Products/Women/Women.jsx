@@ -1,60 +1,44 @@
-import Title from '../../../components/Header/Title'
-import product1 from '../../../assets/product_img11.jpg'
-import '../Combo/combos.css'
-import Icon from '../Icons';
+import { useEffect, useState } from 'react';
+import getProductImage from '../../../components/images/images.js';
+import { apiDomain } from '../../../utils/utilsDomain';
+import '../Combo/combos.css';
+import Icon from '../Icons.jsx';
 
-// Sample product data
-const productsData = [
-    {
-        id: 1,
-        name: 'Product 1',
-        description: 'Description for Product 1',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    {
-        id: 2,
-        name: 'Product 2',
-        description: 'Description for Product 2',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    {
-        id: 3,
-        name: 'Product 3',
-        description: 'Description for Product 3',
-        price: 19.99,
-        imageSrc: product1,
-    },
-    // Add more products here...
-];
-// Combos
 const Women = () => {
+    const [womenProducts, setWomenProducts] = useState([]);
+
+    useEffect(() => {
+        fetch(`${apiDomain}/products/Women`)
+            .then((response) => response.json())
+            .then((data) => {
+                setWomenProducts(data);
+            })
+            .catch((error) => {
+                console.error('Error fetching Womens products:', error);
+            });
+    }, []);
 
     return (
         <>
-            {/* <Title /> */}
             <section className="Women">
                 <div className="product--items">
-                    {productsData.map((product) => (
+                    {womenProducts.map((product) => (
                         <div key={product.id} className="product--item">
-                            <img src={product.imageSrc} alt="product" />
-                            <div className="product--item--details">
-                                <h3>{product.name}</h3>
-                                <p>{product.description}</p>
-                                <span>${product.price}</span>
-                                <Icon id={product.id} />
-                                {/* <button onClick={handleAddToWishlist}>
-                                    {isInWishlist ? '❤️ Added to Wishlist' : '🤍 Add to Wishlist'}
-                                </button> */}
+                            <div className="image">
+                                <img src={getProductImage(product.productName)} alt="product" />
                             </div>
+                            <div className="product--item--details">
+                                <h3>{product.productName}</h3>
+                                <p>{product.productDescription}</p>
+                                <span>${product.productPrice}</span>
+                            </div>
+                            <Icon />
                         </div>
                     ))}
                 </div>
-                
             </section>
         </>
-    )
-}
+    );
+};
 
-export default Women
+export default Women;

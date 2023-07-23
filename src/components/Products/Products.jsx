@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer';
 
 const Products = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [activeMenuItem, setActiveMenuItem] = useState(null);
 
   const handleWindowResize = () => {
     setCollapsed(window.innerWidth <= 768); // Change the breakpoint value as per your requirement
@@ -34,18 +35,31 @@ const Products = () => {
           <MenuItem icon={<FaBars className="icons-side" />} onClick={() => { setCollapsed(!collapsed); }} className='menu'>
             <p>Welcome to Rizzy</p>
           </MenuItem >
-          <MenuItem icon={< FaPeopleCarry className="icons-side" />} component={<Link to="combos" />} className='menu'>
-            <span className="span-side">Combo Fashion</span>
-          </MenuItem>
-          <MenuItem icon={< IoWomanSharp className="icons-side" />} component={<Link to="women" />} className='menu'>
+          <MenuItem
+            icon={<IoWomanSharp className="icons-side" />}
+            component={<Link to="women" />}
+            onClick={() => setActiveMenuItem('women')} // Set active state when Women's Fashion menu item is clicked
+            className={activeMenuItem === 'women' ? 'menu active' : 'menu'}
+          >
             <span className="span-side">Women's Fashion</span>
           </MenuItem>
-          <MenuItem icon={<IoManSharp className="icons-side" />} component={<Link to="men" />} className='menu'>
+          <MenuItem
+            icon={<IoManSharp className="icons-side" />}
+            component={<Link to="men" />}
+            onClick={() => setActiveMenuItem('men')}
+            className={activeMenuItem === 'men' ? 'menu active' : 'menu'}
+          >
             <span className="span-side">Men's Fashion</span>
           </MenuItem>
-          <MenuItem icon={< FaBabyCarriage className="icons-side" />} component={<Link to="child" />} className='menu'>
+          <MenuItem
+            icon={<FaBabyCarriage className="icons-side" />}
+            component={<Link to="child" />}
+            onClick={() => setActiveMenuItem('child')} // Set active state when Children's Fashion menu item is clicked
+            className={activeMenuItem === 'child' ? 'menu active' : 'menu'}
+          >
             <span className="span-side">Children's Fashion</span>
           </MenuItem>
+
         </Menu>
       </Sidebar>
     </>
