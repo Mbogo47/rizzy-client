@@ -2,7 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { apiDomain } from '../utils/utilsDomain';
 import { logOut, loginFailure, loginStart, loginSuccess } from './userSlice';
-
+import { fetchMenProducts, fetchChildrenProducts, fetchWomenProducts } from './productSlice'
 
 export const registerUser = async (dispatch, user) => {
     try {
@@ -11,20 +11,18 @@ export const registerUser = async (dispatch, user) => {
         const data = response.data;
 
         if (response.status === 201 && data.status === 'success') {
-            // No toast success message here
+            toast.success('Registration successful', 'signup-success');
         } else {
             throw new Error(data.message || 'Failed to register user');
         }
-
         console.log(data);
     } catch (err) {
         const errorMessage = err.response?.data?.message || 'An error occurred while registering user';
-
         if (err.response?.status === 400 && errorMessage === 'Email already registered') {
             toast.error(errorMessage, 'signup-error');
         } else {
             toast.warning(errorMessage, 'signup-error');
-        } 
+        }
         console.log(err);
     }
 };
@@ -67,4 +65,39 @@ export const logOutuser = async (dispatch) => {
     console.log(dispatch);
     dispatch(logOut())
 }
+
+
+
+export const getMenProducts = async (dispatch) => {
+    try {
+        const { data } = await axios.get(`${apiDomain}/products/Men`);
+        console.log(data);
+        dispatch(fetchMenProducts(data));
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export const getWomenProducts = async (dispatch) => {
+    try {
+        const { data } = await axios.get(`${apiDomain}/products/Women`);
+        console.log(data);
+        dispatch(fetchWomenProducts(data));
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export const getChildrenProducts = async (dispatch) => {
+    try {
+        const { data } = await axios.get(`${apiDomain}/products/Children`);
+        console.log(data); // Log the API response
+        dispatch(fetchChildrenProducts(data));
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
+};
 

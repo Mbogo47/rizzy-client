@@ -47,7 +47,7 @@ const Login = () => {
     console.log(success);
     if (success) {
       toast.success("Login Successful");
-      navigate('/products/combos');
+      navigate('/products/women');
     }
   }
 

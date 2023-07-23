@@ -1,22 +1,28 @@
 import { useEffect, useState } from 'react';
 import getProductImage from '../../../components/images/images.js';
-import { apiDomain } from '../../../utils/utilsDomain';
+import { useSelector, useDispatch } from 'react-redux';
+import { getWomenProducts } from '../../../redux/apiCall.js';
 import '../Combo/combos.css';
 import Icon from '../Icons.jsx';
 
 const Women = () => {
-    const [womenProducts, setWomenProducts] = useState([]);
+   const womenProducts = useSelector((state) => state.product.items);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch(`${apiDomain}/products/Women`)
-            .then((response) => response.json())
-            .then((data) => {
-                setWomenProducts(data);
-            })
-            .catch((error) => {
-                console.error('Error fetching Womens products:', error);
-            });
-    }, []);
+        const fetchWomenData = async () => {
+            try {
+                const data = await getWomenProducts(dispatch);
+                console.log(data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+        fetchWomenData();
+    }, [dispatch]);
+
+    
 
     return (
         <>
@@ -32,7 +38,7 @@ const Women = () => {
                                 <p>{product.productDescription}</p>
                                 <span>${product.productPrice}</span>
                             </div>
-                            <Icon />
+                            <Icon product={product} />
                         </div>
                     ))}
                 </div>
