@@ -2,14 +2,16 @@ import { FaHeart, FaShoppingCart } from 'react-icons/fa';
 import './icons.css';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice.js';
+import {useNavigate} from 'react-router-dom'
 
 const Icon = ({ product }) => {
     const dispatch = useDispatch()
-    
+    const navigate = useNavigate()
 
-    const handleAddToCart = (product) => {
-        dispatch(addToCart)
+    const handleAddToCart = () => {
+        dispatch(addToCart(product))
         console.log(product)
+        navigate('/cart')
     }
     const handleAddToWishList = (product) => {
         console.log('added to wish list')

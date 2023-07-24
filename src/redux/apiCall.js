@@ -43,8 +43,8 @@ export const loginUser = async (dispatch, user) => {
             position: 'top-center'
         })
         // alert('logged in succesfully');
-        return true;
         console.log(data);
+        return true;
 
     } catch (err) {
         // console.log(err)

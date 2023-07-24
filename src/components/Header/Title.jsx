@@ -1,12 +1,14 @@
 import { useRef, useState } from "react";
 import { CiSearch } from 'react-icons/ci';
 import { FaBars, FaHeart, FaShoppingCart, FaTimes, FaUserCircle } from 'react-icons/fa';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import './title.css';
 
 const Title = () => {
     const navRef = useRef();
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const { cartTotalQuantity } = useSelector((state) => state.cart);
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
@@ -29,24 +31,6 @@ const Title = () => {
                     <>
                         <ul className='nav-list'>
                             <FaTimes className='times' />
-                            {/* <li className='nav-item'>
-                                <Link to="/combos" onClick={toggleMenu}>Combos</Link>
-                            </li>
-                            <li className='nav-item'>
-                                <Link to="/men" onClick={toggleMenu}>Men</Link>
-                            </li>
-                            <li className='nav-item'>
-                                <Link to="/women" onClick={toggleMenu}>Women</Link>
-                            </li>
-                            <li className='nav-item'>
-                                <Link to="/child" onClick={toggleMenu}>Children</Link>
-                            </li>
-                            <li className='nav-item'>
-                                <Link to="/cart" onClick={toggleMenu}>Cart</Link>
-                            </li>
-                            <li className='nav-item'>
-                                Wish
-                            </li> */}
                             <li className='nav-item'>
                                 <Link to='/products/combos'>
                                     Products
@@ -62,10 +46,12 @@ const Title = () => {
                 )}
             </div>
             <nav ref={navRef} className={isMenuOpen ? 'navbar active' : 'navbar'}>
-                <div className="logo">
-                    <span className="rizzy"> RIZZY</span>
-                    <span className="text">all the way</span>
-                </div>
+                <Link to='/products/women'>
+                    <div className="logo">
+                        <span className="rizzy"> RIZZY</span>
+                        <span className="text">all the way</span>
+                    </div>
+                </Link>
                 <div className="search">
                     <input type="search" name="search" placeholder="Search" />
                     <CiSearch className="search-icon" />
@@ -78,7 +64,7 @@ const Title = () => {
                         <div className="cart-section">
                             <FaShoppingCart className='user-icons' />
                             <span className="bag-quantity">
-                                <span>3</span>
+                                <span>{cartTotalQuantity}</span>
                             </span>
                         </div>
                     </Link>

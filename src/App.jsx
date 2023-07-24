@@ -8,7 +8,7 @@ import Signup from './pages/Auth/Signup';
 import Cart from './pages/Cart/Cart';
 import Landingpage from './pages/Landingpage/Landingpage';
 import Children from './pages/Products/Children/Children';
-import Combos from './pages/Products/Combo/Combos';
+// import Applic from './pages/Products/Combo/y';
 import Men from './pages/Products/Men/Men';
 import Women from './pages/Products/Women/Women';
 import ProductCont from './components/Products/ProductCont';
@@ -31,8 +31,8 @@ function App() {
             {/* <Route path="logout" element={Logout />} />  */}
           </Route>
           <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/combos" element={<Applic />} /> */}
           <Route path="/products" element={<ProductCont/>}>
-            <Route path="combos" element={<Combos />} />
             <Route path="men" element={<Men />} />
             <Route path="women" element={<Women />} />
             <Route path="child" element={<Children />} />

@@ -44,7 +44,6 @@ const Login = () => {
     if (data.token) {
       localStorage.setItem("user", JSON.stringify(data));
     }
-    console.log(success);
     if (success) {
       toast.success("Login Successful");
       navigate('/products/women');

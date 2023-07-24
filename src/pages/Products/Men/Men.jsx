@@ -25,8 +25,8 @@ const Men = () => {
 
     return (
         <>
-            <section className="Men">
-                <div className="product--items">
+<section className="Men">
+                 <div className="product--items">
                     {menProducts.map((product) => (
                         <div key={product.productId} className="product--item">
                             <div className="image">
