@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './create.css'
 import { apiDomain } from '../../utils/utilsDomain';
+import {toast} from 'react-toastify'
 
 const CreateProductForm = () => {
   const [formData, setFormData] = useState({
@@ -31,19 +32,21 @@ const CreateProductForm = () => {
       });
 
       if (response.ok) {
-        alert('Product created successfully.');
+        toast.success('Product created successfully.', 'success-toast')
         // You can redirect to a different page or update the product list here.
       } else {
-        alert('Failed to create product.');
+        toast.error('Failed to create product.', 'error-toast')
+
       }
     } catch (error) {
       console.error('Error creating product:', error);
-      alert('Failed to create product. Please try again.');
+      toast.error(error)
+      
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='create-form'>
       <div>
         <label htmlFor="productName">Product Name:</label>
         <input 

@@ -14,6 +14,11 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const defaultValues = {
+    email: 'njoki@gmail.com',
+    password: 'Pass123&'
+  }
+
   const schema = yup.object().shape({
     email: yup.string().required("Email is required"),
     password: yup.string()
@@ -32,6 +37,7 @@ const Login = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: defaultValues,
   });
 
   const notify = (errorMessage, toastId) => {

@@ -16,6 +16,7 @@ import Women from './pages/Products/Women/Women';
 import Wishlist from './pages/Wish/Wish';
 import AdminCont from './pages/Admin/AdminSideBar';
 import CreateProductForm from './pages/Admin/createProducts';
+import AllUsers from './pages/Admin/getAllUsers';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path='/admin' element={<AdminCont />} >
             <Route path='allproducts' element={<AllProducts />} />
             <Route path='createproducts' element={<CreateProductForm />} />
+            <Route path='allusers' element={<AllUsers />} />
           </Route>
           <Route path="/products" element={<ProductCont />}>
             <Route path="men" element={<Men />} />

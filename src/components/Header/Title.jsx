@@ -32,7 +32,7 @@ const Title = () => {
                         <ul className='nav-list'>
                             <FaTimes className='times' />
                             <li className='nav-item'>
-                                <Link to='/products/combos'>
+                                <Link to='/products/women'>
                                     Products
                                 </Link>
                             </li>

@@ -20,12 +20,18 @@ const Header = ({}) => {
 
                     <button className="btn-primary">
                         <Link to='/login'>
-                        <span>Sign In</span>
+                        <span>Admin</span>
                         </Link>
                             
                     </button>
+                    <button className="btn-primary">
+                        <Link to='/login'>
+                            <span>Sign In</span>
+                        </Link>
 
-                    <button className="btn-secondary">
+                    </button>
+
+                    <button className="btn-primary">
                         <Link to='/signup'>
 
                         <span>Sign Up</span>

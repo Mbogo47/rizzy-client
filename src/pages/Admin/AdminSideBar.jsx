@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import Title from "../../components/Header/Title"
+import Title from "./AdminTitle"
 import Admin from "./Admin"
 import '../../components/Products/products.css'
 
