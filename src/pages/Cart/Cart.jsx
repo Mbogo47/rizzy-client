@@ -7,10 +7,15 @@ import getProductImage from '../../components/images/images.js';
 import { addToCart, clearCart, decreaseCart, getTotals, removeFromCart } from '../../redux/cartSlice.js';
 import './cart.css';
 import { useEffect } from 'react';
+import axios from 'axios';
+import { apiDomain } from '../../utils/utilsDomain';
+
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
     const dispatch = useDispatch()
+    const user = useSelector((state) => state.user.user); 
+    const userId = user.id;
 
     useEffect(() => {
         dispatch(getTotals());
@@ -28,6 +33,22 @@ const Cart = () => {
     const handleClearCart = () => {
         dispatch(clearCart());
     };
+
+    const handleCheckout = () => {
+        axios.post(`${apiDomain}/stripe`,
+            {
+                userId: userId,
+                cartItems: cart.cartItems 
+            }).then((res) => {
+                if (res.data.url) {
+                    window.location.href = res.data.url
+                }
+            }).catch((error => {
+                console.log(error)
+            }))
+            console.log("checkout")
+    }
+
     return (
         <>
             <Title />
@@ -79,7 +100,7 @@ const Cart = () => {
                                     <span>Subtotal</span>
                                     <span className="amount">${cart.cartTotalAmount}</span>
                                     <p>Free shipping</p>
-                                    <button>Check Out</button>
+                                    <button onClick={() => handleCheckout()}>Check Out</button>
                                     <div className="continue-shopping">
                                         <Link to="/products/women">
                                             <FaArrowLeft className="arrow-icon" />

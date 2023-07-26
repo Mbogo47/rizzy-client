@@ -39,7 +39,6 @@
     background-color: #0056b3;
 }
 
-/* Optional: If you want to align the label and input fields in a column */
  .create-form div label,
  .create-form div input,
  .create-form div textarea {

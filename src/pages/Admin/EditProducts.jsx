@@ -31,8 +31,8 @@ const EditProduct = ({ product, onSaveChanges, onCloseModal }) => {
                     <label>Category</label>
                     <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} />
                     <div>
-                        <button onClick={handleSave} >Save Changes</button>
-                        <button onClick={onCloseModal}>Cancel</button>
+                        <button onClick={handleSave} className="btn-primary">Save Changes</button>
+                        <button onClick={onCloseModal} className="btn-secondary">Cancel</button>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,6 @@ const CreateProductForm = () => {
 
       if (response.ok) {
         toast.success('Product created successfully.', 'success-toast')
-        // You can redirect to a different page or update the product list here.
       } else {
         toast.error('Failed to create product.', 'error-toast')
 
@@ -101,7 +100,7 @@ const CreateProductForm = () => {
           required
         />
       </div>
-      <button type="submit">Create Product</button>
+      <button type="submit" className="btn-primary">Create Product</button>
     </form>
   );
 };

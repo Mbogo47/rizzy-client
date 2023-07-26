@@ -2,21 +2,21 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { CiSearch } from 'react-icons/ci';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 import loginpic from '../../assets/login.svg';
-import { loginUser } from '../../redux/apiCall.js';
+import { loginAdmin } from '../../redux/apiCall.js';
 import './login.css';
 
-const Login = () => {
+const AdminLogin = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const defaultValues ={
-        email: 'admin',
-        password : 'Pass123&'
+    const defaultValues = {
+        email: 'admin@gmail.com',
+        password: 'Pass123&'
     }
 
     const schema = yup.object().shape({
@@ -46,7 +46,7 @@ const Login = () => {
 
     const onsubmit = async (data) => {
         console.log(data);
-        const success = await loginUser(dispatch, data);
+        const success = await loginAdmin(dispatch, data);
         if (data.token) {
             localStorage.setItem("user", JSON.stringify(data));
         }
@@ -107,7 +107,7 @@ const Login = () => {
                         <span>Sign In</span>
                     </button>
 
-                    
+
 
                 </form>
 
@@ -117,4 +117,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default AdminLogin

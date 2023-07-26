@@ -47,11 +47,9 @@ const Login = () => {
   const onsubmit = async (data) => {
     console.log(data);
     const success = await loginUser(dispatch, data);
-    if (data.token) {
-      localStorage.setItem("user", JSON.stringify(data));
-    }
     if (success) {
       toast.success("Login Successful");
+      
       navigate('/products/women');
     }
   }

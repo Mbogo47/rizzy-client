@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { apiDomain } from '../utils/utilsDomain';
+import { fetchChildrenProducts, fetchMenProducts, fetchWomenProducts } from './productSlice';
 import { logOut, loginFailure, loginStart, loginSuccess } from './userSlice';
-import { fetchMenProducts, fetchChildrenProducts, fetchWomenProducts } from './productSlice'
 
 export const registerUser = async (dispatch, user) => {
     try {
@@ -32,12 +32,35 @@ export const registerUser = async (dispatch, user) => {
 
 //login user
 export const loginUser = async (dispatch, user) => {
-    // const {username} = useSelector((state) => state.user.user)
-
     console.log(user, dispatch);
     dispatch(loginStart());
     try {
         const { data } = await axios.post(`${apiDomain}/auth/login`, user);
+        dispatch(loginSuccess(data));
+        toast.info('Welcome back', 'login', {
+            position: 'top-center'
+        })
+        console.log(data);
+        return true;
+    } catch (err) {
+        console.log(err.response.data.message);
+        toast.error(err.response.data.message, 'login-error', {
+            position: 'top-center'
+        })
+        dispatch(loginFailure());
+        return false;
+    }
+
+}
+
+// login admin
+export const loginAdmin = async (dispatch, admin) => {
+    // const {username} = useSelector((state) => state.user.user)
+
+    console.log(admin, dispatch);
+    dispatch(loginStart());
+    try {
+        const { data } = await axios.post(`${apiDomain}/auth/loginAdmin`, admin);
         dispatch(loginSuccess(data));
         toast.info('Welcome back', 'login', {
             position: 'top-center'
@@ -57,8 +80,8 @@ export const loginUser = async (dispatch, user) => {
         dispatch(loginFailure());
         return false;
     }
-
 }
+
 
 //logout user
 export const logOutuser = async (dispatch) => {
