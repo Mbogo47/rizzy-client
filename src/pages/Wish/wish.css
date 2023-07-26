@@ -1,0 +1,78 @@
+/* Styles for the Wishlist component */
+
+/* Container for the wishlist */
+.wishlist-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Title style */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Wishlist item container */
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Product image style */
+.wishlist-product img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Product name style */
+.wishlist-product h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Product description style */
+.wishlist-product p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Remove button style */
+.wishlist-product button {
+    padding: 5px 10px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Continue shopping button style */
+.continue-shopping button {
+    padding: 8px 15px;
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Start shopping button style */
+.start-shopping button {
+    padding: 8px 15px;
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Arrow icon style */
+.arrow-icon {
+    margin-right: 5px;
+}

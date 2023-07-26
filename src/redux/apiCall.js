@@ -30,8 +30,29 @@ export const registerUser = async (dispatch, user) => {
 
 
 
-//login user
-export const loginUser = async (dispatch, user) => {
+// //login user
+// export const loginUser = async (dispatch, user) => {
+//     console.log(user, dispatch);
+//     dispatch(loginStart());
+//     try {
+//         const { data } = await axios.post(`${apiDomain}/auth/login`, user);
+//         dispatch(loginSuccess(data));
+//         toast.info('Welcome back', 'login', {
+//             position: 'top-center'
+//         })
+//         console.log(data);
+//         return true;
+//     } catch (err) {
+//         console.log(err.response.data.message);
+//         toast.error(err.response.data.message, 'login-error', {
+//             position: 'top-center'
+//         })
+//         dispatch(loginFailure());
+//         return false;
+//     }
+
+// }
+export const loginUser = (user) => async (dispatch) => { // Use async (dispatch) => ...
     console.log(user, dispatch);
     dispatch(loginStart());
     try {
@@ -50,8 +71,7 @@ export const loginUser = async (dispatch, user) => {
         dispatch(loginFailure());
         return false;
     }
-
-}
+};
 
 // login admin
 export const loginAdmin = async (dispatch, admin) => {

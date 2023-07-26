@@ -37,7 +37,7 @@ const Title = () => {
                                 </Link>
                             </li>
                             <li className='nav-item'>
-                                <Link to="/user" onClick={toggleMenu}>User</Link>
+                                <Link to="/user/info" onClick={toggleMenu}>User</Link>
                             </li>
                         </ul>
                     </>

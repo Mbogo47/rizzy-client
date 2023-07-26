@@ -10,3 +10,79 @@
     transition: opacity 0.3s ease;
     font-size: 15px;
 }
+
+
+.profile-container {
+    background-color: var(--light-white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-details {
+    margin-bottom: 20px;
+}
+
+.user-details h2 {
+    color: var(--dark-grey);
+    margin-bottom: 10px;
+}
+
+.user-details p {
+    color: var(--dark-grey);
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.change-password {
+    margin-top: 20px;
+}
+
+.change-password h2 {
+    color: var(--dark-purple);
+    margin-bottom: 10px;
+}
+
+.change-password input[type="password"] {
+    padding: 10px;
+    border: 1px solid var(--lighter-grey);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.change-password button {
+    background-color: var(--light-purple);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--speed);
+}
+
+.change-password button:hover {
+    background-color: var(--dark-purple);
+}
+
+.logout-container {
+    padding: 20px;
+}
+
+.logout-container form p {
+    margin-bottom: 10px;
+}
+
+.logout-container form .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout-container form button {
+    padding: 10px 20px;
+}
+
+.logout-container form button:last-child {
+    background-color: #6620C1;
+    color: #FFFFFF;
+}

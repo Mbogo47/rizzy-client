@@ -2,7 +2,8 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import ProductCont from './components/Products/ProductCont';
-import User from './components/UserProfile/User';
+import Profile from './components/UserProfile/userInfo';
+import UserContent from './components/UserProfile/userSidebar';
 import AdminCont from './pages/Admin/AdminSideBar';
 import CreateProductForm from './pages/Admin/createProducts';
 import AllProducts from './pages/Admin/getAllProducts';
@@ -18,6 +19,7 @@ import Children from './pages/Products/Children/Children';
 import Men from './pages/Products/Men/Men';
 import Women from './pages/Products/Women/Women';
 import Wishlist from './pages/Wish/Wish';
+import Logout from './components/UserProfile/LogOut';
 
 function App() {
   return (
@@ -29,11 +31,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/adminlogin" element={<AdminLogin />} />
           <Route path='/*' element={<NotFound />} />
-          <Route path="/user" element={<User />} >
+          <Route path="/user" element={<UserContent />} >
             {/* <Route path="orders" element={<Orders />} /> */}
             {/* <Route path="wish" element={Wishlist />} />  */}
-            {/* <Route path="info" element={Info />} />  */}
-            {/* <Route path="logout" element={Logout />} />  */}
+            <Route path="info" element={<Profile />} />
+            <Route path="logout" element={<Logout />} /> 
           </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path='/admin' element={<AdminCont />} >

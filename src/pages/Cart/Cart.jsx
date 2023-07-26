@@ -1,20 +1,19 @@
+import axios from 'axios';
+import { useEffect } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Title from '../../components/Header/Title';
-import getProductImage from '../../components/images/images.js';
 import { addToCart, clearCart, decreaseCart, getTotals, removeFromCart } from '../../redux/cartSlice.js';
-import './cart.css';
-import { useEffect } from 'react';
-import axios from 'axios';
 import { apiDomain } from '../../utils/utilsDomain';
+import './cart.css';
 
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
     const dispatch = useDispatch()
-    const user = useSelector((state) => state.user.user); 
+    const user = useSelector((state) => state.user.user);
     const userId = user.id;
 
     useEffect(() => {
@@ -38,7 +37,7 @@ const Cart = () => {
         axios.post(`${apiDomain}/stripe`,
             {
                 userId: userId,
-                cartItems: cart.cartItems 
+                cartItems: cart.cartItems
             }).then((res) => {
                 if (res.data.url) {
                     window.location.href = res.data.url
@@ -46,7 +45,7 @@ const Cart = () => {
             }).catch((error => {
                 console.log(error)
             }))
-            console.log("checkout")
+        console.log("checkout")
     }
 
     return (
@@ -76,7 +75,7 @@ const Cart = () => {
                             {cart.cartItems?.map(cartItem => (
                                 <div className="cart-item" key={cartItem.productId}>
                                     <div className="cart-product">
-                                        <img src={getProductImage(cartItem.productName)} alt={cartItem.productName} />
+                                        <img src={cartItem.productImage} alt={cartItem.productName} />
                                         <div>
                                             <h3>{cartItem.productName}</h3>
                                             <p>{cartItem.productDescription}</p>
