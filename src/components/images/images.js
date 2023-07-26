@@ -36,6 +36,8 @@ const productImages = {
 
     'Polo Shirt': 'https://hips.hearstapps.com/hmg-prod/images/hlh110122lifestyle003-1664380770.jpg',
 
+    'belt': 'https://media.istockphoto.com/id/454363033/photo/brown-leather-belt-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=4mKQ6Ta9Fck_7KuY0Vk7L4dG1i1CzIZtX4rssGt9gW8=',
+
     // //KIDS FASHION
     'Romper':'https://asherkids.co.ke/wp-content/uploads/2020/09/warm-romper.jpeg',
 

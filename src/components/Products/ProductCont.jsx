@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import Products from "./Products"
+import Products from "./ProductSideBar"
 import './products.css'
 import Title from "../Header/Title"
 import Footer from "../Footer/Footer"

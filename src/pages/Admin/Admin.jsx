@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FaBabyCarriage, FaBars, FaPeopleCarry } from 'react-icons/fa';
-import { IoManSharp, IoWomanSharp } from 'react-icons/io5';
-import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
-import Title from '../Header/Title';
-import { Outlet, Link } from 'react-router-dom';
-import Footer from '../Footer/Footer';
+import { FaBars, FaPeopleCarry } from 'react-icons/fa';
+import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar';
+import { Link } from 'react-router-dom';
 
 const Admin = () => {
     const [collapsed, setCollapsed] = useState(false);
@@ -33,11 +30,22 @@ const Admin = () => {
                 <Menu>
                     <MenuItem icon={<FaBars className="icons-side" />} onClick={() => { setCollapsed(!collapsed); }} className='menu'>
                         <p>Admin</p>
-                    </MenuItem >
-                    <MenuItem icon={< FaPeopleCarry className="icons-side" />} component={<Link to="combos" />} className='menu'>
-                        <span className="span-side">Products</span>
                     </MenuItem>
-                    <MenuItem icon={< IoWomanSharp className="icons-side" />} component={<Link to="women" />} className='menu'>
+                    <SubMenu label="Products" className="span-side" icon={< FaPeopleCarry className="icons-side" />} >
+                        <MenuItem icon={< FaPeopleCarry className="icons-side" />} component={<Link to="/admin/allproducts" />} className='menu'>
+                            <span className="span-side">Products</span>
+                        </MenuItem>
+                        <MenuItem icon={< FaPeopleCarry className="icons-side" />} component={<Link to="/admin/createproducts" />} className='menu'>
+                            <span className="span-side">Create Products</span>
+                        </MenuItem>
+                        <MenuItem icon={< FaPeopleCarry className="icons-side" />} component={<Link to="/admin/allproducts" />} className='menu'>
+                            <span className="span-side">Products</span>
+                        </MenuItem>
+                        <MenuItem icon={< FaPeopleCarry className="icons-side" />} component={<Link to="/admin/allproducts" />} className='menu'>
+                            <span className="span-side">Products</span>
+                        </MenuItem>
+                    </SubMenu>
+                    {/* <MenuItem icon={< IoWomanSharp className="icons-side" />} component={<Link to="women" />} className='menu'>
                         <span className="span-side">Users</span>
                     </MenuItem>
                     <MenuItem icon={<IoManSharp className="icons-side" />} component={<Link to="men" />} className='menu'>
@@ -45,7 +53,7 @@ const Admin = () => {
                     </MenuItem>
                     <MenuItem icon={< FaBabyCarriage className="icons-side" />} component={<Link to="child" />} className='menu'>
                         <span className="span-side">Children's Fashion</span>
-                    </MenuItem>
+                    </MenuItem> */}
                 </Menu>
             </Sidebar>
         </>

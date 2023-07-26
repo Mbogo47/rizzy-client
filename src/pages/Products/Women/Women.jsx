@@ -31,7 +31,7 @@ const Women = () => {
                     {womenProducts.map((product) => (
                         <div key={product.id} className="product--item">
                             <div className="image">
-                                <img src={getProductImage(product.productName)} alt="product" />
+                                <img src={product.productImage} alt="product" />
                             </div>
                             <div className="product--item--details">
                                 <h3>{product.productName}</h3>

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import getProductImage from '../../../components/images/images.js';
 import { getMenProducts } from '../../../redux/apiCall.js';
 import '../Combo/combos.css';
 import Icon from '../Icons';
@@ -21,16 +20,16 @@ const Men = () => {
         };
 
         fetchMenData();
-    }, []); 
+    }, []);
 
     return (
         <>
-<section className="Men">
-                 <div className="product--items">
+            <section className="Men">
+                <div className="product--items">
                     {menProducts.map((product) => (
                         <div key={product.productId} className="product--item">
                             <div className="image">
-                                <img src={getProductImage(product.productName)} alt="product" />
+                                <img src={product.productImage} alt="product" />
                             </div>
                             <div className="product--item--details">
                                 <h3>{product.productName}</h3>
