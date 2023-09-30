@@ -28,8 +28,8 @@ const Children = () => {
                 <div className="product--items">
                     {childrenProducts?.map((product) => (
                         <div key={product.productId} className="product--item">
-                            <div className="image">
-                                <img src={product.productImage} alt="product" />
+                             <div className="product--image">
+                                <img src={product.imageSrc} alt="product" className="img"/>
                             </div>
                             <div className="product--item--details">
                                 <h3>{product.productName}</h3>

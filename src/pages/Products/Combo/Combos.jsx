@@ -59,8 +59,8 @@ const Combos = () => {
                 <div className="product--items">
                     {productsData.map((product) => (
                         <div key={product.id} className="product--item">
-                            <div className="product--image">
-                                <img src={product.imageSrc} alt="product" />
+                              <div className="product--image">
+                                <img src={product.imageSrc} alt="product" className="img"/>
                             </div>
                             <div className="product--item--details">
                                 <h3>{product.name}</h3>

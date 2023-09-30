@@ -23,7 +23,7 @@
     overflow: hidden;
 }
 
-.product--item img {
+.product--item .product--image .img {
     border-radius: 10px;
     width: 100%;
     height: 100%;
