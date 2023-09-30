@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Home from '../../components/Home/Home';
 import Reviews from '../../components/Reviews/Reviews';
-import './Landingpage.css';
+import './landingpage.css';
 
 
 const Landingpage = () => {
